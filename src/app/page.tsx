@@ -11,7 +11,13 @@ function getPlants() {
     .map((filename) => {
       const raw = fs.readFileSync(path.join(dir, filename), "utf-8");
       const { data } = matter(raw);
-      return { slug: filename.replace(".md", ""), ...data } as any;
+      const serialized = Object.fromEntries(
+  Object.entries(data).map(([k, v]) => [
+    k,
+    v instanceof Date ? v.toISOString().split("T")[0] : v,
+  ])
+);
+  return { slug: filename.replace(".md", ""), ...serialized } as any;
     });
 }
 
