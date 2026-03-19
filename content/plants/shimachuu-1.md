@@ -1,5 +1,5 @@
 ---
-title: 島忠１号
+title: Shimachu1
 species: ビフルカツム
 acquired_date: 2026-02-14
 location: ""
