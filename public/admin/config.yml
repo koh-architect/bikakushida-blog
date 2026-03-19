@@ -9,13 +9,14 @@ locale: ja
 collections:
   - name: "plants"
     label: "株の管理"
+    label_singular: "株"
     folder: "content/plants"
     create: true
     slug: "{{slug}}"
     fields:
       - { label: "株名", name: "title", widget: "string" }
       - { label: "品種", name: "species", widget: "string", required: false }
-      - { label: "入手日", name: "acquired_date", widget: "date", format: "YYYY-MM-DD" }
+      - { label: "入手日", name: "acquired_date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
       - { label: "置き場所", name: "location", widget: "string", required: false }
       - { label: "板付け素材", name: "mount", widget: "string", required: false }
       - label: "ステータス"
@@ -29,7 +30,7 @@ collections:
         name: "diary"
         widget: "list"
         fields:
-          - { label: "入手日", name: "acquired_date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+          - { label: "日付", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
           - label: "種類"
             name: "type"
             widget: "select"
