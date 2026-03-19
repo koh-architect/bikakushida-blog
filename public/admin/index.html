@@ -3,27 +3,37 @@
   <head>
     <meta charset="utf-8" />
     <title>ビカクシダ管理 CMS</title>
-    <style>
-      /* プレビュー内の画像を縮小表示 */
-      img {
-        max-width: 100% !important;
-        max-height: 300px !important;
-        object-fit: cover !important;
-        width: auto !important;
-      }
-    </style>
   </head>
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
+      // プレビュー用のカスタムスタイルをiframe内に注入
       CMS.registerPreviewStyle(`
-        img {
-          max-width: 100% !important;
-          max-height: 300px !important;
-          object-fit: cover !important;
-        }
-        body { font-family: sans-serif; padding: 16px; }
+        img { max-width: 100%; max-height: 280px; object-fit: cover; display: block; }
+        body { font-family: sans-serif; padding: 20px; font-size: 14px; }
+        h1 { font-size: 22px; margin: 8px 0 4px; }
+        p { margin: 4px 0; color: #555; }
       `);
+
+      // 株のプレビューコンポーネントを登録
+      const PlantPreview = ({ entry }) => {
+        const data = entry.getIn(['data']).toJS();
+        return h('div', { style: { maxWidth: '600px', padding: '16px' } },
+          data.cover_image && h('img', {
+            src: data.cover_image,
+            style: { width: '100%', maxHeight: '280px', objectFit: 'cover', marginBottom: '16px' }
+          }),
+          h('p', { style: { fontSize: '11px', color: '#4a7a3a' } }, data.status),
+          h('h1', {}, data.title),
+          h('p', { style: { fontStyle: 'italic', color: '#888' } }, data.species),
+          h('p', {}, '📅 ' + (data.acquired_date || '—')),
+          h('p', {}, '📍 ' + (data.location || '—')),
+          h('p', {}, '🪵 ' + (data.mount || '—')),
+          data.description && h('p', { style: { marginTop: '12px', lineHeight: '1.8' } }, data.description)
+        );
+      };
+
+      CMS.registerPreviewTemplate('plants', PlantPreview);
     </script>
   </body>
 </html>
