@@ -3,9 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <title>ビカクシダ管理 CMS</title>
+    <style>
+      /* プレビュー内の画像を縮小表示 */
+      img {
+        max-width: 100% !important;
+        max-height: 300px !important;
+        object-fit: cover !important;
+        width: auto !important;
+      }
+    </style>
   </head>
   <body>
-    <!-- これがCMSの管理画面を表示するプログラムです -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      CMS.registerPreviewStyle(`
+        img {
+          max-width: 100% !important;
+          max-height: 300px !important;
+          object-fit: cover !important;
+        }
+        body { font-family: sans-serif; padding: 16px; }
+      `);
+    </script>
   </body>
 </html>
