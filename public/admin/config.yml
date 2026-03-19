@@ -29,7 +29,7 @@ collections:
         name: "diary"
         widget: "list"
         fields:
-          - { label: "日付", name: "date", widget: "date", format: "YYYY-MM-DD" }
+          - { label: "入手日", name: "acquired_date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
           - label: "種類"
             name: "type"
             widget: "select"
