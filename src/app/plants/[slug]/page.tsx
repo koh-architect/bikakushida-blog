@@ -2,8 +2,21 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 
-export default function PlantPage({ params }: { params: { slug: string } }) {
-  const file = path.join(process.cwd(), "content/plants", `${params.slug}.md`);
+export async function generateStaticParams() {
+  const dir = path.join(process.cwd(), "content/plants");
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir)
+    .filter(f => f.endsWith(".md"))
+    .map(f => ({ slug: f.replace(".md", "") }));
+}
+
+export default async function PlantPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const file = path.join(process.cwd(), "content/plants", `${slug}.md`);
   const raw = fs.readFileSync(file, "utf-8");
   const { data } = matter(raw);
 
