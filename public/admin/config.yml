@@ -13,6 +13,7 @@ collections:
     folder: "content/plants"
     create: true
     slug: "{{slug}}"
+    summary: "{{title}} / {{species}} / {{acquired_date}}"
     fields:
       - { label: "株名", name: "title", widget: "string" }
       - { label: "品種", name: "species", widget: "string", required: false }
