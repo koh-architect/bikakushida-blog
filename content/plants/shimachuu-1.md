@@ -1,6 +1,7 @@
 ---
 title: 島忠１号
 species: ビフルカツム
+acquired_date: 2026-02-14
 location: ""
 mount: ジャイロイド板
 status: 育成中
