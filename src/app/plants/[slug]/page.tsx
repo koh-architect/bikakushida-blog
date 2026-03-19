@@ -10,6 +10,18 @@ export async function generateStaticParams() {
     .map((f) => ({ slug: f.replace(".md", "") }));
 }
 
+// 日付オブジェクトを再帰的に文字列に変換する関数
+const serializeData = (obj: any): any => {
+  if (obj instanceof Date) return obj.toISOString().split("T")[0];
+  if (Array.isArray(obj)) return obj.map(serializeData);
+  if (obj && typeof obj === "object") {
+    return Object.fromEntries(
+      Object.entries(obj).map(([k, v]) => [k, serializeData(v)])
+    );
+  }
+  return obj;
+};
+
 export default async function PlantPage({
   params,
 }: {
@@ -18,7 +30,10 @@ export default async function PlantPage({
   const { slug } = await params;
   const file = path.join(process.cwd(), "content/plants", `${slug}.md`);
   const raw = fs.readFileSync(file, "utf-8");
-  const { data } = matter(raw);
+  const { data: rawData } = matter(raw);
+
+  // 日付をすべて文字列に変換してから使う
+  const data = serializeData(rawData);
 
   const diary = (data.diary || []).sort((a: any, b: any) =>
     b.date.localeCompare(a.date)
@@ -61,7 +76,6 @@ export default async function PlantPage({
           padding: 0 24px 80px;
         }
 
-        /* ── NAV ── */
         .back-link {
           display: inline-flex;
           align-items: center;
@@ -74,7 +88,6 @@ export default async function PlantPage({
         }
         .back-link:hover { text-decoration: underline; }
 
-        /* ── HERO IMAGE ── */
         .hero-image-wrap {
           position: relative;
           margin-bottom: 32px;
@@ -98,7 +111,6 @@ export default async function PlantPage({
           border: 1px solid #c8b89a;
           color: #a89878;
         }
-        /* 標本ラベル風の角飾り */
         .hero-image-wrap::before,
         .hero-image-wrap::after {
           content: '';
@@ -117,7 +129,6 @@ export default async function PlantPage({
           border-width: 0 2px 2px 0;
         }
 
-        /* ── TITLE BLOCK ── */
         .title-block {
           margin-bottom: 28px;
           padding-bottom: 24px;
@@ -156,7 +167,6 @@ export default async function PlantPage({
           color: #7a6a4a;
         }
 
-        /* ── INFO GRID ── */
         .info-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -182,7 +192,6 @@ export default async function PlantPage({
           font-weight: 500;
         }
 
-        /* ── DESCRIPTION ── */
         .description {
           font-size: 14px;
           line-height: 2;
@@ -196,7 +205,6 @@ export default async function PlantPage({
           border-right: 1px solid #d4c4a8;
         }
 
-        /* ── DIARY ── */
         .diary-section-title {
           font-family: 'Playfair Display', serif;
           font-size: 22px;
@@ -220,7 +228,6 @@ export default async function PlantPage({
           gap: 0;
           position: relative;
         }
-        /* タイムライン縦線 */
         .diary-list::before {
           content: '';
           position: absolute;
@@ -236,7 +243,6 @@ export default async function PlantPage({
           padding-bottom: 32px;
           position: relative;
         }
-        /* タイムラインドット */
         .diary-dot {
           width: 33px;
           flex-shrink: 0;
@@ -311,7 +317,6 @@ export default async function PlantPage({
       <div className="page-wrapper">
         <a href="/" className="back-link">← 標本一覧へ戻る</a>
 
-        {/* Hero Image */}
         <div className="hero-image-wrap">
           {data.cover_image ? (
             // eslint-disable-next-line @next/next/no-img-element
@@ -321,7 +326,6 @@ export default async function PlantPage({
           )}
         </div>
 
-        {/* Title */}
         <div className="title-block">
           <span
             className="status-badge"
@@ -337,7 +341,6 @@ export default async function PlantPage({
           {data.species && <p className="plant-species">{data.species}</p>}
         </div>
 
-        {/* Info Grid */}
         <div className="info-grid">
           <div className="info-cell">
             <div className="info-label">入手日</div>
@@ -357,12 +360,10 @@ export default async function PlantPage({
           </div>
         </div>
 
-        {/* Description */}
         {data.description && (
           <p className="description">{data.description}</p>
         )}
 
-        {/* Diary */}
         <h2 className="diary-section-title">
           成長日誌
           <span className="diary-count">{diary.length} 件の記録</span>
