@@ -14,6 +14,8 @@ collections:
     create: true
     slug: "{{slug}}"
     summary: "{{title}} / {{species}} / {{acquired_date}}"
+    identifier_field: "title"
+    card_preview_field: "cover_image"
     fields:
       - { label: "株名", name: "title", widget: "string" }
       - { label: "品種", name: "species", widget: "string", required: false }
