@@ -13,12 +13,6 @@
         body { font-family: sans-serif; padding: 20px; font-size: 14px; }
         h1 { font-size: 22px; margin: 8px 0 4px; }
         p { margin: 4px 0; color: #555; }
-
-        /* スマホ対応 */
-        @media (max-width: 768px) {
-          body { padding: 12px; font-size: 16px; }
-          img { max-height: 200px; }
-        }
       `);
 
       CMS.registerPreviewTemplate('plants', ({ entry }) => {
@@ -37,38 +31,6 @@
           data.description && h('p', { style: { marginTop: '12px', lineHeight: '1.8' } }, data.description)
         );
       });
-
-      /* スマホでプレビューを非表示にして編集欄を広げる */
-      const style = document.createElement('style');
-      style.textContent = `
-        @media (max-width: 768px) {
-          /* プレビューペインを非表示 */
-          [class*="PreviewPaneFrame"],
-          [class*="PreviewPane"],
-          [class*="StyledPreviewPaneContainer"] {
-            display: none !important;
-          }
-          /* 編集エリアを全幅に */
-          [class*="EditorContainer"],
-          [class*="ControlPaneContainer"],
-          [class*="EditorControlBar"] {
-            width: 100% !important;
-            max-width: 100% !important;
-          }
-          /* 入力欄を大きく */
-          input, textarea, select {
-            font-size: 16px !important;
-            width: 100% !important;
-            box-sizing: border-box !important;
-          }
-          /* ボタンを押しやすく */
-          button {
-            min-height: 44px !important;
-            font-size: 15px !important;
-          }
-        }
-      `;
-      document.head.appendChild(style);
     </script>
   </body>
 </html>
