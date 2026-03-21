@@ -81,29 +81,14 @@ export default function Home() {
         <header className="site-header">
           <div className="header-top">
             {/* SVGロゴ */}
-            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ flexShrink: 0 }}>
-              <circle cx="40" cy="40" r="38" stroke="#c8b89a" strokeWidth="1" fill="#faf6ef"/>
-              <circle cx="40" cy="40" r="36" stroke="#4a7a3a" strokeWidth="0.5" fill="none" strokeDasharray="2 4"/>
-              {/* 貯水葉 左 */}
-              <path d="M40 44 C30 38 18 35 12 25 C20 28 30 34 40 44Z" fill="#a8c898" opacity="0.7"/>
-              {/* 貯水葉 右 */}
-              <path d="M40 44 C50 38 62 35 68 25 C60 28 50 34 40 44Z" fill="#a8c898" opacity="0.7"/>
-              {/* 胞子葉 左上 */}
-              <path d="M38 42 C28 30 22 18 24 8 C28 16 34 28 38 42Z" fill="#4a7a3a"/>
-              {/* 胞子葉 右上 */}
-              <path d="M42 42 C52 30 58 18 56 8 C52 16 46 28 42 42Z" fill="#4a7a3a"/>
-              {/* 胞子葉 左 */}
-              <path d="M38 44 C24 40 12 36 8 26 C14 30 26 36 38 44Z" fill="#3a6a2a" opacity="0.9"/>
-              {/* 胞子葉 右 */}
-              <path d="M42 44 C56 40 68 36 72 26 C66 30 54 36 42 44Z" fill="#3a6a2a" opacity="0.9"/>
-              {/* 着生点 */}
-              <circle cx="40" cy="44" r="5" fill="#2a3a1a"/>
-              <circle cx="40" cy="44" r="2.5" fill="#7ab87a"/>
-              {/* 根 */}
-              <path d="M38 49 C36 55 34 61 36 68" stroke="#4a7a3a" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
-              <path d="M40 50 C40 57 40 63 40 70" stroke="#4a7a3a" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
-              <path d="M42 49 C44 55 46 61 44 68" stroke="#4a7a3a" strokeWidth="1.2" strokeLinecap="round" fill="none"/>
-            </svg>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/logo.png"
+              alt="ビカクシダ育成記録ロゴ"
+              width={80}
+              height={80}
+              style={{ objectFit: "contain" }}
+            />
             <div className="header-text">
               <p className="header-eyebrow">Cultivation Journal</p>
               <h1 className="site-title"><span>Platycerium</span> 育成記録</h1>
