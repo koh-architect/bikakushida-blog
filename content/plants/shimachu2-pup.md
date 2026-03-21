@@ -1,5 +1,5 @@
 ---
-title: shimachu2 pup
+title: shimachu_2 pup
 species: ネザーランズ　子株
 acquired_date: 2026-03-10
 location: リビング
