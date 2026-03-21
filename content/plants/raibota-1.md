@@ -1,5 +1,5 @@
 ---
-title: raibota1
+title: raibota_1
 species: アルシコルネ・ゴルゴン
 acquired_date: 2026-03-08
 mount: ジャイロイド板
