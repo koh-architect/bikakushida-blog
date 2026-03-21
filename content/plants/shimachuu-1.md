@@ -1,5 +1,5 @@
 ---
-title: Shimachu1
+title: shimachu_1
 species: ビフルカツム
 acquired_date: 2026-02-14
 location: ""
