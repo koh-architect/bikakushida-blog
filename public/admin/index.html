@@ -4,7 +4,25 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <title>ビカクシダ管理 CMS</title>
-  </head>
+    <style>
+      @media (max-width: 768px) {
+        /* サイドバーを非表示にして全幅表示 */
+        [class*="SidebarContainer"],
+        [class*="CollectionTopContainer"],
+        [class*="NavContainer"] {
+          display: none !important;
+        }
+        /* コンテンツエリアを全幅に */
+        [class*="MainContainer"],
+        [class*="App-container"],
+        [class*="MainAreaContainer"] {
+          width: 100% !important;
+          margin-left: 0 !important;
+          padding-left: 0 !important;
+        }
+      }
+    </style>
+  </head>z
   <body>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     <script>
