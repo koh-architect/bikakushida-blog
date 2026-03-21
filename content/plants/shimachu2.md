@@ -1,5 +1,5 @@
 ---
-title: shimachu2
+title: shimachu_2
 species: ネザーランズ
 acquired_date: 2026-03-10
 location: リビング
