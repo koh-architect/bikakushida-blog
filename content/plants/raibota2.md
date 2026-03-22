@@ -12,4 +12,8 @@ diary:
     type: 観察
     image: /images/uploads/image.jpg
     note: この子は多頭成長点。新芽が三つも生えてることが判明してるいま。
+  - date: 2026-03-22
+    type: 観察
+    image: /images/uploads/img_9566.jpeg
+    note: ヒリーは胞子葉のターンです。３つの新芽が同時にどんどん大きくなってきています。
 ---
