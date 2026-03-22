@@ -9,88 +9,95 @@
     <title>ビカクシダ管理 CMS</title>
 
   <style>
-    @media (max-width: 768px) {
+  @media (max-width: 768px) {
 
-      /* =========================
-        ① 横はみ出し防止（最小限）
-      ========================= */
+    /* =========================
+      ① 横はみ出し防止
+    ========================= */
 
-      html, body {
-        overflow-x: hidden !important;
-      }
-
-      input, textarea, select {
-        width: 100% !important;
-        min-width: 0 !important;
-      }
-
-      /* flex崩れ防止 */
-      div {
-        min-width: 0 !important;
-      }
-
-      /* =========================
-        ② メインエリアを広げる（重要）
-      ========================= */
-
-      /* メイン領域を強制フル幅 */
-      main, [role="main"] {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-
-      /* サイドバーはそのまま（消さない・動かさない） */
-
-      /* =========================
-        ③ カード（株一覧）を広げる
-      ========================= */
-
-      /* カードコンテナ */
-      [class*="Collection"],
-      [class*="collection"] {
-        width: 100% !important;
-      }
-
-      /* カード自体 */
-      [class*="Card"],
-      [class*="card"] {
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-
-      /* =========================
-        ④ モーダル（画像）
-      ========================= */
-
-      [role="dialog"] {
-        position: fixed !important;
-        inset: 0 !important;
-        width: 100vw !important;
-        max-width: 100vw !important;
-        height: 100vh !important;
-        overflow-y: auto !important;
-        overflow-x: hidden !important;
-        background: #fff !important;
-      }
-
-      /* ボタン固定 */
-      [role="dialog"] button {
-        position: sticky !important;
-        bottom: 0 !important;
-        z-index: 9999 !important;
-        background: white !important;
-      }
-
-      /* =========================
-        ⑤ 画像グリッド修正
-      ========================= */
-
-      [role="dialog"] img {
-        width: 100% !important;
-        height: auto !important;
-      }
-
+    html, body {
+      overflow-x: hidden !important;
     }
+
+    input, textarea, select {
+      width: 100% !important;
+      min-width: 0 !important;
+    }
+
+    div {
+      min-width: 0 !important;
+    }
+
+    /* =========================
+      ② サイドバーを上に移動（維持）
+    ========================= */
+
+    nav, aside {
+      width: 100% !important;
+      max-width: 100% !important;
+      position: relative !important;
+      order: -1 !important;
+    }
+
+    /* =========================
+      🔥 ③ 左カラムの余白を潰す（重要）
+    ========================= */
+
+    /* レイアウトの左側カラムを潰す */
+    [class*="SidebarContainer"],
+    [class*="sidebar"],
+    aside {
+      flex: 0 0 auto !important;
+      width: 100% !important;
+    }
+
+    /* メインをフル幅に */
+    main, [role="main"] {
+      flex: 1 1 100% !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+    }
+
+    /* =========================
+      ④ カードを中央に
+    ========================= */
+
+    [class*="Collection"],
+    [class*="collection"] {
+      width: 100% !important;
+      padding: 0 12px !important;
+    }
+
+    [class*="Card"],
+    [class*="card"] {
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    /* =========================
+      ⑤ モーダル（維持）
+    ========================= */
+
+    [role="dialog"] {
+      position: fixed !important;
+      inset: 0 !important;
+      width: 100vw !important;
+      max-width: 100vw !important;
+      height: 100vh !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      background: #fff !important;
+    }
+
+    [role="dialog"] button {
+      position: sticky !important;
+      bottom: 0 !important;
+      z-index: 9999 !important;
+      background: white !important;
+    }
+
+  }
   </style>
   </head>
 
