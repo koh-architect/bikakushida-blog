@@ -11,46 +11,12 @@
     <style>
       @media (max-width: 768px) {
 
-        /* =========================
-           レイアウト簡略化
-        ========================= */
-
-        /* サイドバー非表示 */
-        [class*="SidebarContainer"],
-        [class*="CollectionTopContainer"],
-        [class*="NavContainer"] {
-          display: none !important;
-        }
-
-        /* メイン全幅 */
-        [class*="MainContainer"],
-        [class*="App-container"],
-        [class*="MainAreaContainer"] {
-          width: 100% !important;
-          margin-left: 0 !important;
-          padding-left: 0 !important;
-        }
-
-        /* =========================
-           🔥 メディアモーダル修正（重要）
-        ========================= */
-
-        /* モーダル全体 */
+        /* モーダルだけ直す（安全） */
         [role="dialog"] {
-          position: fixed !important;
-          inset: 0 !important;
           height: 100vh !important;
           overflow: auto !important;
-          background: #fff !important;
         }
 
-        /* 内部コンテンツ */
-        [role="dialog"] > div {
-          min-height: 100% !important;
-          overflow: visible !important;
-        }
-
-        /* ボタンエリアを常に見えるように */
         [role="dialog"] button {
           position: sticky !important;
           bottom: 0 !important;
@@ -58,17 +24,8 @@
           background: white !important;
         }
 
-        /* 念のため全部のボタン保険 */
-        button {
-          z-index: 9999 !important;
-        }
-
-        /* スクロールできるように */
-        html, body {
-          overflow: auto !important;
-          -webkit-overflow-scrolling: touch;
-        }
       }
+      
     </style>
   </head>
 
