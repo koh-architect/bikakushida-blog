@@ -2,7 +2,8 @@
 title: raibota_1
 species: アルシコルネ・ゴルゴン
 acquired_date: 2026-03-08
-mount: ジャイロイド板
+location: リビング
+mount: ジャイロイド板２０cm
 status: 育成中
 cover_image: /images/uploads/img_9483.jpeg
 description: ライボタで一目惚れしたアルシコルネのゴルゴン！バランスよくコンパクトな胞子葉と一枚しっかりした貯水葉がスタート。春先いきなり貯水葉のターンっぽいので、まずはしっかり水切れしないように育てたい。
