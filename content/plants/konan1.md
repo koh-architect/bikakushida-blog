@@ -7,9 +7,5 @@ mount: ジャイロイド板
 status: 育成中
 cover_image: /images/uploads/img_9486.jpeg
 description: コーナンのビザールプランツフェアの売れ残り株。残り2個でした。あんまり元気がない株でしたが、胞子葉の新芽は出てそうだったので購入することにしました。港北ではIKEA、コーナン、ライボタが巡回コースになりそう笑
-diary:
-  - date: 2026-03-22
-    type: 観察
-    image: /images/uploads/img_9581.jpeg
-    note: なかなか定着しないみたい。枯れもしないので、根張りを頑張ってる最中かな？
+diary: []
 ---
