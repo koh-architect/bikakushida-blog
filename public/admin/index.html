@@ -2,17 +2,27 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+    <!-- ✅ iOS対策込み viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
     <title>ビカクシダ管理 CMS</title>
+
     <style>
       @media (max-width: 768px) {
-        /* サイドバーを非表示にして全幅表示 */
+
+        /* =========================
+           レイアウト簡略化
+        ========================= */
+
+        /* サイドバー非表示 */
         [class*="SidebarContainer"],
         [class*="CollectionTopContainer"],
         [class*="NavContainer"] {
           display: none !important;
         }
-        /* コンテンツエリアを全幅に */
+
+        /* メイン全幅 */
         [class*="MainContainer"],
         [class*="App-container"],
         [class*="MainAreaContainer"] {
@@ -20,12 +30,56 @@
           margin-left: 0 !important;
           padding-left: 0 !important;
         }
+
+        /* =========================
+           🔥 メディアモーダル修正（重要）
+        ========================= */
+
+        /* モーダル全体 */
+        [role="dialog"] {
+          position: fixed !important;
+          inset: 0 !important;
+          height: 100vh !important;
+          overflow: auto !important;
+          background: #fff !important;
+        }
+
+        /* 内部コンテンツ */
+        [role="dialog"] > div {
+          min-height: 100% !important;
+          overflow: visible !important;
+        }
+
+        /* ボタンエリアを常に見えるように */
+        [role="dialog"] button {
+          position: sticky !important;
+          bottom: 0 !important;
+          z-index: 9999 !important;
+          background: white !important;
+        }
+
+        /* 念のため全部のボタン保険 */
+        button {
+          z-index: 9999 !important;
+        }
+
+        /* スクロールできるように */
+        html, body {
+          overflow: auto !important;
+          -webkit-overflow-scrolling: touch;
+        }
       }
     </style>
   </head>
+
   <body>
+    <!-- Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+
     <script>
+      /* =========================
+         プレビューCSS
+      ========================= */
       CMS.registerPreviewStyle(`
         img { max-width: 100%; max-height: 280px; object-fit: cover; display: block; }
         body { font-family: sans-serif; padding: 20px; font-size: 14px; }
@@ -33,20 +87,40 @@
         p { margin: 4px 0; color: #555; }
       `);
 
+      /* =========================
+         プレビューテンプレート
+      ========================= */
       CMS.registerPreviewTemplate('plants', ({ entry }) => {
         const data = entry.getIn(['data']).toJS();
+
         return h('div', { style: { maxWidth: '600px', padding: '16px' } },
+
           data.cover_image && h('img', {
             src: data.cover_image,
-            style: { width: '100%', maxHeight: '280px', objectFit: 'cover', marginBottom: '16px' }
+            style: {
+              width: '100%',
+              maxHeight: '280px',
+              objectFit: 'cover',
+              marginBottom: '16px'
+            }
           }),
+
           h('p', { style: { fontSize: '11px', color: '#4a7a3a' } }, data.status),
+
           h('h1', {}, data.title),
+
           h('p', { style: { fontStyle: 'italic', color: '#888' } }, data.species),
+
           h('p', {}, '📅 ' + (data.acquired_date || '—')),
           h('p', {}, '📍 ' + (data.location || '—')),
           h('p', {}, '🪵 ' + (data.mount || '—')),
-          data.description && h('p', { style: { marginTop: '12px', lineHeight: '1.8' } }, data.description)
+
+          data.description && h('p', {
+            style: {
+              marginTop: '12px',
+              lineHeight: '1.8'
+            }
+          }, data.description)
         );
       });
     </script>
