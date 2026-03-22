@@ -11,4 +11,8 @@ diary:
     image: /images/uploads/img_9489.jpeg
     note: 水やり後は張りがあって良いかんじ。貯水葉の新芽がまさに出てきたところ！
     type: 観察
+  - date: 2026-03-22
+    type: 観察
+    image: /images/uploads/img_9567.jpeg
+    note: 成長点右側に新しい貯水葉が展開してきました。すこし水苔に邪魔されたかもしれません。あまり成長点近くに水苔を盛りすぎるとこういうことが起きるのね。
 ---
