@@ -60,7 +60,65 @@
   <body>
     <!-- Decap CMS -->
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+    CMS.registerEventListener({
+      name: 'postSave',
+      handler: async ({ entry }) => {
+        try {
+          const data = entry.get('data');
+          const diary = data.get('diary');
 
+          if (!diary) return;
+
+          const updatedDiary = await Promise.all(
+            diary.map(async (item) => {
+              const image = item.get('image');
+              if (!image) return item;
+
+              // 画像URL取得
+              const url = image;
+
+              // サイズ取得
+              const res = await fetch(url);
+              const blob = await res.blob();
+              const sizeKB = Math.round(blob.size / 1024);
+
+              return item.set('image_size', sizeKB);
+            })
+          );
+
+          console.log("画像サイズ自動取得:", updatedDiary);
+
+        } catch (e) {
+          console.error("サイズ取得エラー", e);
+        }
+      }
+    });
+    </script>
+    <script>
+    CMS.registerEventListener({
+      name: 'preSave',
+      handler: async ({ entry }) => {
+        const data = entry.get('data');
+        const diary = data.get('diary');
+
+        if (!diary) return;
+
+        for (let i = 0; i < diary.size; i++) {
+          const item = diary.get(i);
+          const image = item.get('image');
+
+          if (image) {
+            const res = await fetch(image);
+            const blob = await res.blob();
+            const sizeKB = Math.round(blob.size / 1024);
+
+            alert("画像サイズ: " + sizeKB + " KB");
+          }
+        }
+      }
+    });
+    </script>
     <script>
       /* =========================
          プレビューCSS
