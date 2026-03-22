@@ -2,8 +2,8 @@
 title: shimachu_1
 species: ビフルカツム
 acquired_date: 2026-02-14
-location: ""
-mount: ジャイロイド板
+location: リビング
+mount: ジャイロイド板２０cm
 status: 育成中
 cover_image: /images/uploads/img_9481.jpeg
 description: |-
