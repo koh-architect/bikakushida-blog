@@ -16,4 +16,8 @@ diary:
     type: 観察
     image: /images/uploads/img_9566.jpeg
     note: ヒリーは胞子葉のターンです。３つの新芽が同時にどんどん大きくなってきています。
+  - date: 2026-03-22
+    type: 観察
+    image: /images/uploads/img_20260322_215022_975632159751430496.jpg
+    note: 葉っぱがしっかりしてきたよ！
 ---
