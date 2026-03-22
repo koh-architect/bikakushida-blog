@@ -12,21 +12,11 @@
     @media (max-width: 768px) {
 
       /* =========================
-        ① 横はみ出し防止（ベース）
+        ① 横はみ出し防止（最小限）
       ========================= */
 
       html, body {
         overflow-x: hidden !important;
-        -webkit-overflow-scrolling: touch;
-      }
-
-      * {
-        box-sizing: border-box !important;
-        max-width: 100% !important;
-      }
-
-      div {
-        min-width: 0 !important;
       }
 
       input, textarea, select {
@@ -34,31 +24,42 @@
         min-width: 0 !important;
       }
 
+      /* flex崩れ防止 */
+      div {
+        min-width: 0 !important;
+      }
+
       /* =========================
-        ② サイドバーを上に移動
+        ② メインエリアを広げる（重要）
       ========================= */
 
-      /* 全体レイアウトを縦に */
-      body > div {
-        display: flex !important;
-        flex-direction: column !important;
-      }
-
-      /* サイドバー（nav/aside） */
-      nav, aside {
+      /* メイン領域を強制フル幅 */
+      main, [role="main"] {
         width: 100% !important;
         max-width: 100% !important;
-        position: relative !important;
-        order: -1 !important;
       }
 
-      /* メイン */
-      main {
+      /* サイドバーはそのまま（消さない・動かさない） */
+
+      /* =========================
+        ③ カード（株一覧）を広げる
+      ========================= */
+
+      /* カードコンテナ */
+      [class*="Collection"],
+      [class*="collection"] {
         width: 100% !important;
+      }
+
+      /* カード自体 */
+      [class*="Card"],
+      [class*="card"] {
+        width: 100% !important;
+        max-width: 100% !important;
       }
 
       /* =========================
-        ③ モーダル修正（画像選択）
+        ④ モーダル（画像）
       ========================= */
 
       [role="dialog"] {
@@ -72,7 +73,7 @@
         background: #fff !important;
       }
 
-      /* ボタンを常に見えるように */
+      /* ボタン固定 */
       [role="dialog"] button {
         position: sticky !important;
         bottom: 0 !important;
@@ -81,27 +82,12 @@
       }
 
       /* =========================
-        ④ 画像グリッド復活
+        ⑤ 画像グリッド修正
       ========================= */
 
-      /* 画像 */
       [role="dialog"] img {
-        max-width: none !important;
         width: 100% !important;
         height: auto !important;
-      }
-
-      /* グリッド */
-      [role="dialog"] [class*="grid"],
-      [role="dialog"] [class*="Grid"] {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 8px !important;
-      }
-
-      /* カードの崩れ防止 */
-      [role="dialog"] div {
-        min-width: 0 !important;
       }
 
     }
