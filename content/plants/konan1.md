@@ -20,6 +20,10 @@ diary:
     type: 水やり
     image: /images/uploads/1000000155
     note:
+  - date: 2026-03-23
+    type: 水やり
+    image: /images/uploads/IMG_4440713839949472579.jpg
+    note:
 
   - date: 2026-03-23
     type: 水やり
