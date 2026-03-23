@@ -19,7 +19,7 @@ diary:
     note: テストアップ2
 
 - date: 2026-03-23
-  type: 水やり
-  image: /images/uploads/IMG_5934623850773020410.jpg
-  note: テストアップデート
+    type: 水やり
+    image: /images/uploads/IMG_5934623850773020410.jpg
+    note: テストアップデート
 ---
