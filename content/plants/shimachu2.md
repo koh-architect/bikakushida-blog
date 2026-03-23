@@ -10,6 +10,6 @@ description: 仕事終わりにまた島忠に行って買った、一番大き�
 diary:
   - date: 2026-03-22
     type: 観察
-    image: /images/uploads/img_20260322_213453_8587346913319505018.jpg
+    image: /images/uploads/img_9485.jpeg
     note: 貯水葉が展開しつつあります。色々阻まれてあんまりきれいには広がってない感じもします。もうすこし様子見かな。
 ---
