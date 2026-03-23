@@ -11,3 +11,7 @@ diary:
     type: 水やり
     image: /images/uploads/1000000155
     note: テスト株のデータ構造チェック
+  - date: 2026-03-23
+    type: 植え替え
+    image: /images/uploads/1000000155
+    note: テスト株の2つ目
