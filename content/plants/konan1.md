@@ -12,4 +12,9 @@ diary:
     type: 観察
     image: /images/uploads/img_9585.jpeg
     note: 胞子葉が上に伸びてきました！星状毛もしっかり生えていて、元気な新芽に見えます。分岐の様子はないかな？
+
+- date: 2026-03-23
+  type: 水やり
+  image: /images/uploads/IMG_5934623850773020410.jpg
+  note: テストアップデート
 ---
