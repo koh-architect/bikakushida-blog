@@ -13,9 +13,9 @@ diary:
     image: /images/uploads/img_9585.jpeg
     note: ...
   - date: 2026-03-23
-      type: 水やり
-      image: /images/uploads/IMG_7001502364788457465.jpg
-      note: テスト3
+    type: 水やり
+    image: /images/uploads/IMG_7001502364788457465.jpg
+    note: テスト3
 
   - date: 2026-03-23
     type: 水やり
