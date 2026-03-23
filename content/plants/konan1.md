@@ -12,25 +12,4 @@ diary:
     type: 観察
     image: /images/uploads/img_9585.jpeg
     note: ...
-  - date: 2026-03-23
-    type: 水やり
-    image: /images/uploads/IMG_7001502364788457465.jpg
-    note: テスト3
-  - date: 2026-03-23
-    type: 水やり
-    image: /images/uploads/1000000155
-    note:
-  - date: 2026-03-23
-    type: 水やり
-    image: /images/uploads/IMG_4440713839949472579.jpg
-    note:
-
-  - date: 2026-03-23
-    type: 水やり
-    image: /images/uploads/IMG_1512438124316059908.jpg
-    note: テストアップ2
-
-  - date: 2026-03-23
-    type: 水やり
-    image: /images/uploads/IMG_5934623850773020410.jpg
-    note: テストアップデート
+---
