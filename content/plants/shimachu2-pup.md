@@ -12,4 +12,8 @@ diary:
     type: 観察
     image: /images/uploads/img_9581.jpeg
     note: なかなか定着しないみたい。ただ枯れてもないので、根張りを頑張ってる最中かな？
+  - date: 2026-03-24
+    type: 観察
+    image: /images/uploads/IMG_1774327948145.jpg
+    note: 今のところ何も動きがないです。 改行コメントテスト用の送信です。
 ---
