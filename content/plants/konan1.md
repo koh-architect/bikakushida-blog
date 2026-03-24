@@ -13,9 +13,9 @@ diary:
     image: /images/uploads/img_9585.jpeg
     note: ...
   - date: 2026-03-24
-    type: 水やり
-    image: /images/uploads/IMG_1774323466344.jpg
-    note:
+    type: 観察
+    image: /images/uploads/IMG_1774323496601.jpg
+    note: 観察しています
 - date: 2026-03-24
   type: 観察
   note: 観察しています
