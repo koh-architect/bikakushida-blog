@@ -16,6 +16,3 @@ diary:
     type: 観察
     image: /images/uploads/IMG_1774323496601.jpg
     note: 観察しています
-- date: 2026-03-24
-  type: 観察
-  note: 観察しています
