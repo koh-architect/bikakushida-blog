@@ -12,11 +12,9 @@ diary:
     type: 観察
     image: /images/uploads/img_9585.jpeg
     note: ...
-  - date: 2026-03-24
-    type: 水やり
-    note:
----
-
+- date: 2026-03-24
+  type: 水やり
+  note: 
 - date: 2026-03-24
   type: 観察
   note: 観察しています
