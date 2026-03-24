@@ -39,5 +39,5 @@ collections:
             widget: "select"
             options: ["水やり", "施肥", "植え替え", "観察", "その他"]
           - { label: "写真", name: "image", widget: "image", required: false }
-          - { label: "画像サイズ(KB)", name: "image_size", widget: "string", required: false }
+          
           - { label: "記録メモ", name: "note", widget: "text" }
