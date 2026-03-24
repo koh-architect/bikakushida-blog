@@ -12,4 +12,9 @@ diary:
     type: 観察
     image: /images/uploads/img_9585.jpeg
     note: ...
+  - date: 2026-03-24
+    type: 観察
+    image: /images/uploads/IMG_1774325576763.jpg
+    note: 胞子葉がぐんぐん伸びてきた、元気なかったけど少しスイッチ入った感じします。
+    貯水葉のターンはしばらく先かな。
 ---
