@@ -12,4 +12,8 @@ diary:
     type: 観察
     image: /images/uploads/img_9573.jpeg
     note: 貯水葉が立ち上がるように展開してきました。これはこの後ちゃんと這ってくれるのでしょうか？
+  - date: 2026-03-24
+    type: 観察
+    image: /images/uploads/IMG_1774325670838.jpg
+    note: 貯水葉が立ち上がってたのが這うように変化しながら成長してきました。緑も濃くて元気な貯水葉になってきました。
 ---
