@@ -16,4 +16,8 @@ diary:
     type: 観察
     image: /images/uploads/IMG_1774325576763.jpg
     note: 胞子葉がぐんぐん伸びてきた、元気なかったけど少しスイッチ入った感じします。貯水葉のターンはしばらく先かな。
+  - date: 2026-03-30
+    type: 観察
+    image: /images/uploads/IMG_1774866305859.jpg
+    note: 胞子葉の新芽が伸びてきました。まだしばらくは胞子葉のターンかな？
 ---
